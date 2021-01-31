@@ -10,7 +10,6 @@
         }
     ],
 ```
-![Screenshot from 2021-01-31 23-11-50](https://user-images.githubusercontent.com/72479838/106390186-be9f4100-6419-11eb-884e-ebee9ff2e5ff.png)
 1) In your terminal, run:
 ``` bash
 php artisan config:cache
@@ -34,9 +33,7 @@ php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider
 php artisan migrate: (if fails please run php artisan route:clear,php artisan route:cache,php artisan route:cache and then run php artisan migrate:fresh)
 php artisan db:seed --class="packageSeeder"
 ```
-4) Make sure you create a route/backpack file permissionmanager.php,then paste this to this file:
- ![Screenshot from 2021-01-31 23-09-43](https://user-images.githubusercontent.com/72479838/106390149-8ef03900-6419-11eb-82fc-8c0b0b525eb7.png)
- 
+4) Make sure you create a route/backpack/permissionmanager.php,then paste this to this file:
  ```
 <?php
 
