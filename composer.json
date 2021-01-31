@@ -19,6 +19,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
+        "spatie/laravel-backup": "^6.14",
         "backpack/backupmanager": "^3.0",
         "backpack/crud": "4.1.*",
         "backpack/filemanager": "^1.1",
@@ -29,6 +30,8 @@
         "cviebrock/eloquent-sluggable": "^8.0||^7.0||^6.0||4.8"
     },
     "require-dev": {
+ "backpack/generators": "^3.1",
+ "laracasts/generators": "^2.0",
         "phpunit/phpunit" : "^9.0||^7.0",
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3 || ~3.0"
