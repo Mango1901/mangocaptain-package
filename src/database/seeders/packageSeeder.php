@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Permission;
-use App\Models\Role;
+use Backpack\NewsCRUD\app\Models\Permission;
+use Backpack\NewsCRUD\app\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
