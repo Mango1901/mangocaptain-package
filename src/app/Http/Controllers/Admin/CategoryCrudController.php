@@ -19,7 +19,7 @@ class CategoryCrudController extends CrudController
 
     public function setup()
     {
-        CRUD::setModel("App\Models\Category");
+        CRUD::setModel(config('backpack.mangocaptainconfig.models.user'));
         CRUD::setRoute(config('backpack.base.route_prefix', 'admin').'/category');
         CRUD::setEntityNameStrings('category', 'categories');
         if(backpack_user()->hasRole("User")){
