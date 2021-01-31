@@ -69,7 +69,7 @@ class Category extends Model
     public function User(){
         return $this->belongsTo(User::class,"user_id","id");
 
-}
+    }
 
     /*
     |--------------------------------------------------------------------------
