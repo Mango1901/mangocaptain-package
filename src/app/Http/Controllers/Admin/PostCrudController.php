@@ -39,7 +39,7 @@ class PostCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(config('backpack.mangocaptainconfig.models.user'));
+        CRUD::setModel(config('backpack.mangocaptainconfig.models.post'));
         CRUD::setRoute(config('backpack.base.route_prefix') . '/post');
         CRUD::setEntityNameStrings('post', 'posts');
         $this->crud->allowAccess('revisions');

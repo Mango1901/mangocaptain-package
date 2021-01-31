@@ -19,7 +19,7 @@ class TagCrudController extends CrudController
 
     public function setup()
     {
-        $this->crud->setModel(config('backpack.mangocaptainconfig.models.user'));
+        $this->crud->setModel(config('backpack.mangocaptainconfig.models.tag'));
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/tag');
         $this->crud->setEntityNameStrings('tag', 'tags');
         $this->setupListOperation();
