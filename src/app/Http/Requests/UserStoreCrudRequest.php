@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class TagRequest extends FormRequest
+class UserStoreCrudRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,31 +25,9 @@ class TagRequest extends FormRequest
     public function rules()
     {
         return [
-             'name' => 'required|min:2|max:255'
-        ];
-    }
-
-    /**
-     * Get the validation attributes that apply to the request.
-     *
-     * @return array
-     */
-    public function attributes()
-    {
-        return [
-            //
-        ];
-    }
-
-    /**
-     * Get the validation messages that apply to the request.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            //
+            'email'    => 'required|unique:'.config('permission.table_names.users', 'users').',email',
+            'name'     => 'required',
+            'password' => 'required|confirmed',
         ];
     }
 }
