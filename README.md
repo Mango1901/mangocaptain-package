@@ -1,91 +1,19 @@
 # mangocaptaincmsbackpack/package
-
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
-
-An admin panel for news articles on Laravel 5-7, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Write articles, with categories and tags.
-
-
-> ### Security updates and breaking changes
-> Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/newsletter)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
-
-
 ## Install
 
-Since NewsCRUD is just a Backpack\CRUD example, you can choose to install it one of two ways.
-
-**(A) Download and place files in your application** (recommended; remember to also ```composer require cviebrock/eloquent-sluggable```)
-
-or
-
-**(B) As a package**
-
-The only PRO of installing it as a package is that you may benefit from updates. But the reality is there is very little (if any) bug fixing to do, so you probably won't need to update it, ever.
-
-
-
-#### Installation type (A) - download
-
-
-1) [Download the latest build](https://github.com/Laravel-Backpack/NewsCRUD/archive/master.zip).
-
-2) Paste the 'app' and 'database' folders over your projects (merge them). No file overwrite warnings should come up.
-
-3) Replace all mentions of 'Backpack\NewsCRUD\app' in the pasted files with your application's namespace ('App' if you haven't changed it):
-- app/Http/Controllers/Admin/ArticleCrudController.php
-- app/Http/Controllers/Admin/CategoryCrudController.php
-- app/Http/Controllers/Admin/TagCrudController.php
-- app/Http/Requests/ArticleRequest.php
-- app/Http/Requests/CategoryRequest.php
-- app/Http/Requests/TagRequest.php
-- app/Models/Article.php
-- app/Models/Category.php
-- app/Models/Tag.php
-
-4) Run the migration to have the database table we need:
-```
-php artisan migrate
-```
-
-5) Add NewsCRUD to your routes file:
-
-```
-Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
-    // Backpack\NewsCRUD
-    Route::crud('article', 'ArticleCrudController');
-    Route::crud('category', 'CategoryCrudController');
-    Route::crud('tag', 'TagCrudController');
-});
-```
-
-6) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
-
-```html
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-newspaper-o"></i>News</a>
-    <ul class="nav-dropdown-items">
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('article') }}"><i class="nav-icon la la-newspaper-o"></i> Articles</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('category') }}"><i class="nav-icon la la-list"></i> Categories</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('tag') }}"><i class="nav-icon la la-tag"></i> Tags</a></li>
-    </ul>
-</li>
-```
-
-
-
-#### Installation type (B) - package
-
+1) * In your composoer.json file,paste:
+"repositories": [{
+        "type": "git",
+        "url": "git@github.com:Mango1901/mangocaptain-package.git"
+    }
+    ],
 1) In your terminal, run:
-
 ``` bash
-composer require backpack/newscrud
+ composer require spatie/laravel-backup
+composer require mangocaptaincmsbackpack/package:dev-master
 ```
 
-2) Publish the migration:
+2) Publish the migration,seeder,views,config:
 
 ```
 php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider"
@@ -94,10 +22,21 @@ php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider
 3) Run the migration to have the database table we need:
 
 ```
-php artisan migrate
+php artisan migrate: (if fails please run php artisan route:clear,php artisan route:cache,php artisan route:cache and then run php artisan migrate:fresh)
+php artisan db:seed --class="packageSeeder"
 ```
+4) Make sure you create a route file permissionmanager.php,then paste this to this file:
+    <?php
 
-4) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+    Route::group([
+    'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
+    'prefix'     => config('backpack.base.route_prefix', 'admin'),
+    'middleware' => ['web', backpack_middleware()],
+    ], function () {
+    //
+    });
+
+5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
 <li class="nav-item nav-dropdown">
@@ -109,6 +48,10 @@ php artisan migrate
     </ul>
 </li>
 ```
+6) Add m stop impersonate item to topbar_left_content.blade.php:
+@if (backpack_user()->isImpersonating())
+    <li><a href="{{ url('admin/stop-impersonating') }}">Stop Impersonating</a></li>
+@endif
 
 
 
@@ -116,16 +59,10 @@ php artisan migrate
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Testing
-
-``` bash
-$ composer test
-```
-
 ## Overwriting functionality
 
 If you need to modify how this works in a project: 
-- create a ```routes/backpack/newscrud.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package; 
+- create a ```routes/backpack/mangocaptainroutes.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package; 
 - create controllers/models that extend the ones in the package, and use those in your new routes file;
 - modify anything you'd like in the new controllers/models;
 
