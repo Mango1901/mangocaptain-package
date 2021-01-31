@@ -41,20 +41,16 @@ php artisan db:seed --class="packageSeeder"
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-newspaper-o"></i>News</a>
-    <ul class="nav-dropdown-items">
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('article') }}"><i class="nav-icon la la-newspaper-o"></i> Articles</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('category') }}"><i class="nav-icon la la-list"></i> Categories</a></li>
-      <li class="nav-item"><a class="nav-link" href="{{ backpack_url('tag') }}"><i class="nav-icon la la-tag"></i> Tags</a></li>
-    </ul>
-</li>
+
 ```
 6) Add m stop impersonate item to topbar_left_content.blade.php:
 @if (backpack_user()->isImpersonating())
     <li><a href="{{ url('admin/stop-impersonating') }}">Stop Impersonating</a></li>
 @endif
-
+7) Add to App\Models\User:
+use \Backpack\CRUD\app\Models\Traits\CrudTrait;
+use \Spatie\Permission\Traits\HasRoles;
+use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
 
 
 ## Change log
