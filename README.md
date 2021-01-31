@@ -31,15 +31,7 @@ php artisan migrate: (if fails please run php artisan route:clear,php artisan ro
 php artisan db:seed --class="packageSeeder"
 ```
 4) Make sure you create a route/backpack file permissionmanager.php,then paste this to this file:
-    <?php
-
-    Route::group([
-    'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
-    'prefix'     => config('backpack.base.route_prefix', 'admin'),
-    'middleware' => ['web', backpack_middleware()],
-    ], function () {
-    //
-    });
+   ![Uploading Screenshot from 2021-01-31 23-09-43.png…]()
 
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
