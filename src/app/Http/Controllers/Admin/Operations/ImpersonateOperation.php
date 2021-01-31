@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Operations;
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin\Operations;
 
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
