@@ -7,7 +7,7 @@ use Backpack\NewsCRUD\app\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class packageSeeder extends Seeder
 {
     /**
      * Seed the application's database.
