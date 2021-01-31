@@ -30,6 +30,7 @@ class NewsCRUDServiceProvider extends ServiceProvider
     {
         // publish migrations
         $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
+ $this->publishes([__DIR__.'/database/seeders' => database_path('seeders')], 'seeders');
     }
 
     /**
