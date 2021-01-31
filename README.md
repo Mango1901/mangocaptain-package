@@ -2,6 +2,14 @@
 ## Install
 
 1) * In your composoer.json file,paste:
+
+"repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:Mango1901/mangocaptain-package.git"
+        }
+    ],
+    
 ![Screenshot from 2021-01-31 23-11-50](https://user-images.githubusercontent.com/72479838/106390186-be9f4100-6419-11eb-884e-ebee9ff2e5ff.png)
 1) In your terminal, run:
 ``` bash
@@ -27,7 +35,16 @@ php artisan migrate: (if fails please run php artisan route:clear,php artisan ro
 php artisan db:seed --class="packageSeeder"
 ```
 4) Make sure you create a route/backpack file permissionmanager.php,then paste this to this file:
-  ![Screenshot from 2021-01-31 23-09-43](https://user-images.githubusercontent.com/72479838/106390149-8ef03900-6419-11eb-82fc-8c0b0b525eb7.png)
+ ![Screenshot from 2021-01-31 23-09-43](https://user-images.githubusercontent.com/72479838/106390149-8ef03900-6419-11eb-82fc-8c0b0b525eb7.png)
+<?php
+
+Route::group([
+    'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
+    'prefix'     => config('backpack.base.route_prefix', 'admin'),
+    'middleware' => ['web', backpack_middleware()],
+], function () {
+    //
+});
 
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
