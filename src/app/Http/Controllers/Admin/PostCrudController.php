@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
-use App\Http\Requests\PostRequest;
-use App\Models\Category;
-use App\Models\Post;
-use App\Models\Tag;
+use Backpack\NewsCRUD\app\Http\Requests\PostRequest;
+use Backpack\NewsCRUD\app\Models\Category;
+use Backpack\NewsCRUD\app\Models\Post;
+use Backpack\NewsCRUD\app\Models\Tag;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;

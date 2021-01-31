@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
-use App\Models\Tag;
+use Backpack\NewsCRUD\app\Models\Tag;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
-use App\Http\Requests\TagRequest;
+use Backpack\NewsCRUD\app\Http\Requests\TagRequest;
 use CRUD;
 
 class TagCrudController extends CrudController

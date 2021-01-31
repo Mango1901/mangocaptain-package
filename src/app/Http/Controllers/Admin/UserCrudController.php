@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use App\Http\Requests\UserStoreCrudRequest as StoreRequest;
-use App\Http\Requests\UserUpdateCrudRequest as UpdateRequest;
-use App\Http\Controllers\Admin\Operations\ImpersonateOperation;
+use Backpack\NewsCRUD\app\Http\Requests\UserStoreCrudRequest as StoreRequest;
+use Backpack\NewsCRUD\app\Http\Requests\UserUpdateCrudRequest as UpdateRequest;
+use Backpack\NewsCRUD\app\Http\Controllers\Admin\Operations\ImpersonateOperation;
 use App\Models\User;
 use Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 use Illuminate\Support\Facades\Hash;

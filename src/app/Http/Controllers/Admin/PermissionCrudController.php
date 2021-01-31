@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use App\Http\Requests\PermissionStoreCrudRequest as StoreRequest;
-use App\Http\Requests\PermissionUpdateCrudRequest as UpdateRequest;
+use Backpack\NewsCRUD\app\Http\Requests\PermissionStoreCrudRequest as StoreRequest;
+use Backpack\NewsCRUD\app\Http\Requests\PermissionUpdateCrudRequest as UpdateRequest;
 
 // VALIDATION
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
-use App\Models\Category;
+use Backpack\NewsCRUD\app\Models\Category;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use App\Http\Requests\CategoryRequest;
+use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest;
 
 class CategoryCrudController extends CrudController
 {

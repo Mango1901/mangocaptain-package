@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
-use App\Models\Role;
+use Backpack\NewsCRUD\app\Models\Role;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use App\Http\Requests\RoleStoreCrudRequest as StoreRequest;
-use App\Http\Requests\RoleUpdateCrudRequest as UpdateRequest;
+use Backpack\NewsCRUD\app\Http\Requests\RoleStoreCrudRequest as StoreRequest;
+use Backpack\NewsCRUD\app\Http\Requests\RoleUpdateCrudRequest as UpdateRequest;
 
 // VALIDATION
 
