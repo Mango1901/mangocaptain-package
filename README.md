@@ -2,14 +2,14 @@
 ## Install
 
 1) * In your composoer.json file,paste:
-
+```
 "repositories": [
         {
             "type": "git",
             "url": "git@github.com:Mango1901/mangocaptain-package.git"
         }
     ],
-    
+```
 ![Screenshot from 2021-01-31 23-11-50](https://user-images.githubusercontent.com/72479838/106390186-be9f4100-6419-11eb-884e-ebee9ff2e5ff.png)
 1) In your terminal, run:
 ``` bash
