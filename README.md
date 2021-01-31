@@ -80,15 +80,18 @@ Route::group([
 
 ```
 6) Add stop impersonate item to topbar_left_content.blade.php:
+
 ```html
 @if (backpack_user()->isImpersonating())
     <li><a href="{{ url('admin/stop-impersonating') }}">Stop Impersonating</a></li>
 @endif
 ```html
+
 7) Add to App\Models\User:
 use \Backpack\CRUD\app\Models\Traits\CrudTrait;
 use \Spatie\Permission\Traits\HasRoles;
 use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
+
 8) In Terminal ,Run:(If something went wrong)
 php artisan route:clear
 php artisan route:cache
