@@ -28,6 +28,13 @@ class NewsCRUDServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/config/backpack/mangocaptainconfig.php',
+            'backpack.mangocaptainconfig'
+        );
+
+        // publish config file
+        $this->publishes([__DIR__.'/config' => config_path()], 'config');
         // publish migrations
         $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
  $this->publishes([__DIR__.'/database/seeders' => database_path('seeders')], 'seeders');
