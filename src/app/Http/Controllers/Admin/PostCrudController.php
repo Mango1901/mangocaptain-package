@@ -542,11 +542,11 @@ class PostCrudController extends CrudController
     }
     public function fetchCategory()
     {
-        return $this->fetch(\App\Models\Category::class);
+        return $this->fetch(\Backpack\NewsCRUD\app\Models\Category::class);
     }
     public function fetchTag()
     {
-        return $this->fetch(\App\Models\Tag::class);
+        return $this->fetch(\Backpack\NewsCRUD\app\Models\Tag::class);
     }
     public function tagOptions(Request $request) {
         $term = $request->input('term');

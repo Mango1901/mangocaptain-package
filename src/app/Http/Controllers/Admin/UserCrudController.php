@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\NewsCRUD\app\Http\Requests\UserStoreCrudRequest as StoreRequest;
 use Backpack\NewsCRUD\app\Http\Requests\UserUpdateCrudRequest as UpdateRequest;
 use Backpack\NewsCRUD\app\Http\Controllers\Admin\Operations\ImpersonateOperation;
-use App\Models\User;
+use Backpack\NewsCRUD\app\Models\User;
 use Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 use Illuminate\Support\Facades\Hash;
 
