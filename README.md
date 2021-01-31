@@ -37,7 +37,7 @@ php artisan db:seed --class="packageSeeder"
 4) Make sure you create a route/backpack file permissionmanager.php,then paste this to this file:
  ![Screenshot from 2021-01-31 23-09-43](https://user-images.githubusercontent.com/72479838/106390149-8ef03900-6419-11eb-82fc-8c0b0b525eb7.png)
  
- 
+ ```
 <?php
 
 Route::group([
@@ -48,8 +48,9 @@ Route::group([
     //
 });
 
+```
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
-
+```
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
 <li class="nav-item nav-dropdown">
@@ -81,21 +82,26 @@ Route::group([
 ```
 6) Add stop impersonate item to topbar_left_content.blade.php:
 
-```html
+```
 @if (backpack_user()->isImpersonating())
     <li><a href="{{ url('admin/stop-impersonating') }}">Stop Impersonating</a></li>
 @endif
-```html
+
+```
 
 7) Add to App\Models\User:
+```
 use \Backpack\CRUD\app\Models\Traits\CrudTrait;
 use \Spatie\Permission\Traits\HasRoles;
 use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
-
+```
 8) In Terminal ,Run:(If something went wrong)
+```
 php artisan route:clear
 php artisan route:cache
 php artisan config:cache
 php artisan config:clear
+
+```
 
 
