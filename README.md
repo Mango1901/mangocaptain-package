@@ -11,6 +11,8 @@
 ``` bash
  composer require spatie/laravel-backup
 composer require mangocaptaincmsbackpack/package:dev-master
+
+php artisan backpack:install
 ```
 
 2) Publish the migration,seeder,views,config:
