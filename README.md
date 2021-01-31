@@ -31,7 +31,7 @@ php artisan migrate: (if fails please run php artisan route:clear,php artisan ro
 php artisan db:seed --class="packageSeeder"
 ```
 4) Make sure you create a route/backpack file permissionmanager.php,then paste this to this file:
-   ![Uploading Screenshot from 2021-01-31 23-09-43.png…]()
+  ![Screenshot from 2021-01-31 23-09-43](https://user-images.githubusercontent.com/72479838/106390149-8ef03900-6419-11eb-82fc-8c0b0b525eb7.png)
 
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
