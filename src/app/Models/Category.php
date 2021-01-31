@@ -54,17 +54,17 @@ class Category extends Model
 
     public function parent()
     {
-        return $this->belongsTo(' Backpack\NewsCRUD\app\Category', 'parent_id');
+        return $this->belongsTo('Backpack\NewsCRUD\app\Models\Category', 'parent_id');
     }
 
     public function children()
     {
-        return $this->hasMany(' Backpack\NewsCRUD\app\Category', 'parent_id');
+        return $this->hasMany('Backpack\NewsCRUD\app\Models\Category', 'parent_id');
     }
 
     public function articles()
     {
-        return $this->hasMany(' Backpack\NewsCRUD\app\Article');
+        return $this->hasMany('Backpack\NewsCRUD\app\Models\Category');
     }
     public function User(){
         return $this->belongsTo(User::class,"user_id","id");
