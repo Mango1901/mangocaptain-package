@@ -27,7 +27,7 @@ php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider
 php artisan migrate: (if fails please run php artisan route:clear,php artisan route:cache,php artisan route:cache and then run php artisan migrate:fresh)
 php artisan db:seed --class="packageSeeder"
 ```
-4) Make sure you create a route file permissionmanager.php,then paste this to this file:
+4) Make sure you create a route/backpack file permissionmanager.php,then paste this to this file:
     <?php
 
     Route::group([
