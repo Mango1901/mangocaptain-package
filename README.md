@@ -77,8 +77,6 @@ Route::group([
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('backup') }}'><i class='nav-icon la la-hdd-o'></i> Backups</a></li>
 
-```html
-
 ```
 6) Add stop impersonate item to topbar_left_content.blade.php:
 
