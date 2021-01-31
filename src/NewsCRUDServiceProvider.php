@@ -32,12 +32,17 @@ class NewsCRUDServiceProvider extends ServiceProvider
             __DIR__.'/config/backpack/mangocaptainconfig.php',
             'backpack.mangocaptainconfig'
         );
+        $this->mergeConfigFrom(
+            __DIR__.'/config/save_disk.php.php',
+            'save_disk'
+        );
 
         // publish config file
         $this->publishes([__DIR__.'/config' => config_path()], 'config');
         // publish migrations
         $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
- $this->publishes([__DIR__.'/database/seeders' => database_path('seeders')], 'seeders');
+        $this->publishes([__DIR__.'/database/seeders' => database_path('seeders')], 'seeders');
+        $this->publishes([__DIR__.'/resources/views/vendor/backpack/crud' => resource_path('views/vendor/backpack')], 'views');
     }
 
     /**
