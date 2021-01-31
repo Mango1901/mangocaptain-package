@@ -33,7 +33,7 @@ class NewsCRUDServiceProvider extends ServiceProvider
             'backpack.mangocaptainconfig'
         );
         $this->mergeConfigFrom(
-            __DIR__.'/config/save_disk.php.php',
+            __DIR__.'/config/save_disk.php',
             'save_disk'
         );
 
@@ -42,7 +42,7 @@ class NewsCRUDServiceProvider extends ServiceProvider
         // publish migrations
         $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
         $this->publishes([__DIR__.'/database/seeders' => database_path('seeders')], 'seeders');
-        $this->publishes([__DIR__.'/resources/views/vendor/backpack/crud' => resource_path('views/vendor/backpack')], 'views');
+        $this->publishes([__DIR__.'/resources/views/vendor/backpack' => resource_path('views/vendor/backpack')], 'views');
     }
 
     /**

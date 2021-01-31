@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Policies;
+namespace Backpack\NewsCRUD\app\Policies;
 
-use App\Models\User;
+use Backpack\NewsCRUD\app\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy

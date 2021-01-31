@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Policies;
+namespace Backpack\NewsCRUD\app\Policies;
 
-use App\Models\Post;
-use App\Models\User;
+use Backpack\NewsCRUD\app\Models\Post;
+use Backpack\NewsCRUD\app\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostPolicy

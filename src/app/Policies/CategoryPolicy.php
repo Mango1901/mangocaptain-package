@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Policies;
+namespace Backpack\NewsCRUD\app\Policies;
 
-use App\Models\Category;
-use App\Models\User;
+use Backpack\NewsCRUD\app\Models\Category;
+use Backpack\NewsCRUD\app\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CategoryPolicy
