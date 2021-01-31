@@ -16,6 +16,15 @@ Route::group([
     'middleware' => ['web', 'admin'],
 ], function () {
     Route::crud('article', 'ArticleCrudController');
+    Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');
+    Route::get('posts/ajax-custom-fields-options', 'PostCrudController@customFieldsOptions');
+    Route::get('posts/ajax-category-options', 'PostCrudController@categoryOptions');
+    Route::get('posts/ajax-tag-options', 'PostCrudController@tagOptions');
+    Route::crud('permission', 'PermissionCrudController');
+    Route::crud('role', 'RoleCrudController');
+    Route::crud('user', 'UserCrudController');
     Route::crud('category', 'CategoryCrudController');
     Route::crud('tag', 'TagCrudController');
+    Route::crud('post', 'PostCrudController');
+    Route::get('charts/new-entries', 'Charts\NewEntriesChartController@response')->name('charts.new-entries.index');
 });
