@@ -6,7 +6,6 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\NewsCRUD\app\Http\Requests\UserStoreCrudRequest as StoreRequest;
 use Backpack\NewsCRUD\app\Http\Requests\UserUpdateCrudRequest as UpdateRequest;
 use Backpack\NewsCRUD\app\Http\Controllers\Admin\Operations\ImpersonateOperation;
-use Backpack\NewsCRUD\app\Models\User;
 use Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 use Illuminate\Support\Facades\Hash;
 
@@ -32,8 +31,6 @@ class UserCrudController extends CrudController
 
     public function setupListOperation()
     {
-        $this->crud->addButton('line', 'update', 'view', 'crud::buttons.edit',"beginning");
-        $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete');
         $this->crud->addColumns([
             [
                 'name'  => 'name',
@@ -104,13 +101,8 @@ class UserCrudController extends CrudController
 
     public function setupUpdateOperation()
     {
-        $user = User::where("id",$this->crud->getCurrentEntryId())->first();
-        if(backpack_user()->can("update",$user)) {
             $this->addUserFields();
             $this->crud->setValidation(UpdateRequest::class);
-        }else{
-            abort(403);
-        }
     }
 
     /**

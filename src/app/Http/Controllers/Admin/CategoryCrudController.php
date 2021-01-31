@@ -31,16 +31,12 @@ class CategoryCrudController extends CrudController
 
     protected function setupListOperation()
     {
-             $this->crud->addButton('line', 'update', 'view', 'crud::buttons.edit',"beginning");
-             $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete');
         CRUD::addColumn('name');
         CRUD::addColumn('slug');
         CRUD::addColumn('parent');
     }
     protected function setupShowOperation()
     {
-        $this->crud->addButton('line', 'update', 'view', 'crud::buttons.edit',"beginning");
-        $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete');
         $this->setupListOperation();
         CRUD::addColumn([
             "name"=>"user_id",
@@ -53,7 +49,7 @@ class CategoryCrudController extends CrudController
                     return backpack_url('user/'.$entry->user_id.'/show');
                 },
             ],
-            'model' => "App\Models\User",
+            'model' => config('backpack.mangocaptainconfig.models.category'),
         ]);
         CRUD::addColumn('created_at');
         CRUD::addColumn('updated_at');
@@ -93,9 +89,6 @@ class CategoryCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $category = Category::where("id",$this->crud->getCurrentEntryId())->first();
-        if(!backpack_user()->can("update",$category)){
-            abort(403);
-        }
         $this->setupCreateOperation();
     }
 

@@ -43,7 +43,7 @@ class TagCrudController extends CrudController
                     return backpack_url('user/'.$entry->user_id.'/show');
                 },
             ],
-            'model' => "App\Models\User",
+            'model' => config('backpack.mangocaptainconfig.models.tag'),
         ]);
         CRUD::addColumn("name");
         CRUD::addColumn("slug");
@@ -51,8 +51,6 @@ class TagCrudController extends CrudController
         CRUD::addColumn('updated_at');
     }
     protected function setupShowOperation(){
-        $this->crud->addButton('line', 'update', 'view', 'crud::buttons.edit',"beginning");
-        $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete');
         $this->setupListOperation();
 
     }
@@ -71,9 +69,6 @@ class TagCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $tag = Tag::where("id",$this->crud->getCurrentEntryId())->first();
-        if(backpack_user()->cannot("update",$tag)){
-            abort(403);
-        }
         $this->crud->setValidation(TagRequest::class);
     }
 }

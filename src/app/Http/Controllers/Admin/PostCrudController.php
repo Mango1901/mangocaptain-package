@@ -64,8 +64,6 @@ class PostCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->setActionsColumnPriority(10000);
-                $this->crud->addButton('line', 'update', 'view', 'crud::buttons.edit');
-                $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete');
         CRUD::addColumn([
             "name"=>"title",
             "label"=>"Title",
@@ -245,10 +243,6 @@ class PostCrudController extends CrudController
         $this->crud->addButtonFromModelFunction('line', 'open_google', 'openGoogle', 'beginning');
     }
     public function setupShowOperation(){
-
-        $this->crud->addButton('line', 'update', 'view', 'crud::buttons.edit',"beginning");
-        $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete');
-
         $this->crud->addColumn(
             [
                 'name'  => 'custom_fields',
@@ -284,7 +278,7 @@ class PostCrudController extends CrudController
                     return backpack_url('user/'.$entry->user_id.'/show');
                 },
             ],
-            'model' => "App\Models\User",
+            'model' => config('backpack.mangocaptainconfig.models.category'),
         ]);
         $this->crud->addColumns([
             [ // n-n relationship (with pivot table)
@@ -502,9 +496,6 @@ class PostCrudController extends CrudController
     {
         $this->crud->setEditContentClass("col-md-12 col-md-offset-2");
         $post = Post::where("id",$this->crud->getCurrentEntryId())->first();
-        if(!backpack_user()->can("update",$post)){
-            abort(403);
-        }
         $this->setupCreateOperation();
         $this->crud->addSaveActions([
             [
