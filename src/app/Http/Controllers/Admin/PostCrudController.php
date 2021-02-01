@@ -402,7 +402,7 @@ class PostCrudController extends CrudController
         $abc = CRUD::addField(
             [   // repeatable
                 'name'  => 'custom_fields',
-                'label' => 'Testimonials',
+                'label' => 'Custom Fields',
                 'type'  => 'repeatable',
                 'fields' => [
                     [
