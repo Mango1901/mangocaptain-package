@@ -30,8 +30,6 @@ class TagCrudController extends CrudController
         }
     }
     protected function setupListOperation(){
-            $this->crud->addButton('line', 'update', 'view', 'crud::buttons.edit',"beginning");
-            $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete');
         CRUD::addColumn([
             "name"=>"user_id",
             'type'=> 'select',
