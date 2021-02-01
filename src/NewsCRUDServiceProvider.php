@@ -29,7 +29,7 @@ class NewsCRUDServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/mangocaptainconfig.php',
+            __DIR__.'/config/backpack/permissionmanager.php',
             'backpack.mangocaptainconfig'
         );
         $this->mergeConfigFrom(
