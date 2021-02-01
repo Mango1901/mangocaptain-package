@@ -19,7 +19,7 @@ class NewsCRUDServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public $routeFilePath = '/routes/backpack/permissionmanager.php';
+    public $routeFilePath = '/routes/backpack/mangocaptainroutes.php';
 
     /**
      * Perform post-registration booting of services.
