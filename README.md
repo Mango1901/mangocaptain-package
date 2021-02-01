@@ -100,7 +100,7 @@ php artisan config:cache
 php artisan config:clear
 
 ```
-9) Sibling from storage to public 
+9) Symlink from storage to public 
 
 ``` bash
 php artisan storage:link
