@@ -34,7 +34,7 @@ php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider
 3) Run the migration to have the database table we need:
 
 ``` bash
-php artisan migrate: (if fails please run php artisan route:clear,php artisan route:cache,php artisan route:cache and then run php artisan migrate:fresh)
+php artisan migrate: (if fails please run php artisan route:clear,php artisan route:cache and then run php artisan migrate:fresh)
 php artisan db:seed --class="packageSeeder"
 ```
 4) Make sure you create a route/backpack/permissionmanager.php,then paste this to this file:
