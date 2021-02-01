@@ -98,5 +98,11 @@ php artisan config:cache
 php artisan config:clear
 
 ```
+9) Sibling from storage to public 
+
+```
+php artisan storage:link
+
+```
 
 
