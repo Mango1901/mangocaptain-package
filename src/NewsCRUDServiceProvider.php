@@ -19,7 +19,7 @@ class NewsCRUDServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public $routeFilePath = '/routes/backpack/mangopackageroutes.php';
+    public $routeFilePath = '/routes/backpack/permissionmanager.php';
 
     /**
      * Perform post-registration booting of services.
@@ -29,7 +29,7 @@ class NewsCRUDServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/backpack/permissionmanager.php',
+            __DIR__.'/config/backpack/mangocaptainconfig.php',
             'backpack.mangocaptainconfig'
         );
         $this->mergeConfigFrom(
