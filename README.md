@@ -1,4 +1,4 @@
-# Package Name : mangopostcmsbackpack/postpackage
+# Package Name : mangocmspostbackpacktest/postpackagetest
 
 ### This package is what i'm done with backpack tools in a month:
 ### - This has create a POST with full function and following by some add-ons tools to supports such as Permissionmanager, FileManager,BackUp,...
@@ -17,7 +17,7 @@
 ``` bash
 php artisan config:clear
  
-composer require mangopostcmsbackpack/postpackage:dev-master
+composer require mangocmspostbackpacktest/postpackagetest:dev-master
 
 php artisan backpack:install
 
