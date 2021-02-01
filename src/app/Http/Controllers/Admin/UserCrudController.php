@@ -15,17 +15,12 @@ class UserCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation { update as traitUpdate; }
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use ShowOperation;
-    use ImpersonateOperation;
 
     public function setup()
     {
         $this->crud->setModel(config('backpack.mangocaptainconfig.models.user'));
         $this->crud->setEntityNameStrings("user", "users");
         $this->crud->setRoute(backpack_url('user'));
-        if(!backpack_user()->hasRole("Admin")){
-            $this->crud->denyAccess("create");
-            $this->crud->denyAccess("delete");
-        }
     }
 
     public function setupListOperation()

@@ -23,11 +23,6 @@ class TagCrudController extends CrudController
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/tag');
         $this->crud->setEntityNameStrings('tag', 'tags');
         $this->setupListOperation();
-        if(backpack_user()->hasRole("User")){
-            $this->crud->denyAccess("create");
-            $this->crud->denyAccess("update");
-            $this->crud->denyAccess("delete");
-        }
     }
     protected function setupListOperation(){
         CRUD::addColumn([
