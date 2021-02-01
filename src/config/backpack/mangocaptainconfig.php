@@ -13,8 +13,6 @@ return [
 
     'models' => [
         'user'       => App\Models\User::class,
-        'permission' => Backpack\PermissionManager\app\Models\Permission::class,
-        'role'       => Backpack\PermissionManager\app\Models\Role::class,
         "post"       => \Backpack\NewsCRUD\app\Models\Post::class,
         "category"   => \Backpack\NewsCRUD\app\Models\Category::class,
         "tag"        => \Backpack\NewsCRUD\app\Models\Tag::class

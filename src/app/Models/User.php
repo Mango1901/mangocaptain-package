@@ -8,12 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
-use Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable,HasRoles,CrudTrait;
-    use CanImpersonateTrait;
+    use HasFactory, Notifiable,CrudTrait;
 
     /**
      * The attributes that are mass assignable.

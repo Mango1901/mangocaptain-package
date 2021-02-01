@@ -20,8 +20,6 @@ Route::group([
     Route::get('posts/ajax-custom-fields-options', 'PostCrudController@customFieldsOptions');
     Route::get('posts/ajax-category-options', 'PostCrudController@categoryOptions');
     Route::get('posts/ajax-tag-options', 'PostCrudController@tagOptions');
-    Route::crud('permission', 'PermissionCrudController');
-    Route::crud('role', 'RoleCrudController');
     Route::crud('user', 'UserCrudController');
     Route::crud('category', 'CategoryCrudController');
     Route::crud('tag', 'TagCrudController');
