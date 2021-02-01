@@ -15,7 +15,6 @@ Route::group([
     'prefix' => config('backpack.base.route_prefix', 'admin'),
     'middleware' => ['web', 'admin'],
 ], function () {
-    Route::crud('article', 'ArticleCrudController');
     Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');
     Route::get('posts/ajax-custom-fields-options', 'PostCrudController@customFieldsOptions');
     Route::get('posts/ajax-category-options', 'PostCrudController@categoryOptions');
