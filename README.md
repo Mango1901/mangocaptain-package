@@ -16,8 +16,6 @@
 1) In your terminal, run:
 ``` bash
 php artisan config:clear
-
-composer require spatie/laravel-backup
  
 composer require mangopostcmsbackpack/postpackage:dev-master
 
