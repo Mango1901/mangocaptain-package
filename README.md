@@ -1,6 +1,7 @@
 # mangocaptaincmsbackpack/package
 
-### This package is what i'm done with backpack tools in a month.
+### This package is what i'm done with backpack tools in a month:
+### - This has create a POST with full function and following by some add-ons tools to supports such as Permissionmanager, FileManager,BackUp,...
 ## Install
 
 1) * In your composoer.json file,paste:
