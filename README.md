@@ -93,7 +93,7 @@ use \Spatie\Permission\Traits\HasRoles;
 use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
 ```
 8) In Terminal ,Run:(If something went wrong)
-```
+``` bash
 php artisan route:clear
 php artisan route:cache
 php artisan config:cache
