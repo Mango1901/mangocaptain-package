@@ -25,18 +25,18 @@ php artisan backpack:filemanager:install
 
 2) Publish the migration,seeder,views,config:
 
-```
+``` bash 
 php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider"
 ```
 
 3) Run the migration to have the database table we need:
 
-```
+``` bash
 php artisan migrate: (if fails please run php artisan route:clear,php artisan route:cache,php artisan route:cache and then run php artisan migrate:fresh)
 php artisan db:seed --class="packageSeeder"
 ```
 4) Make sure you create a route/backpack/permissionmanager.php,then paste this to this file:
- ```
+ ``` php
 <?php
 
 Route::group([
@@ -49,7 +49,7 @@ Route::group([
 
 ```
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
-```
+``` html
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
 <li class="nav-item nav-dropdown">
@@ -79,7 +79,7 @@ Route::group([
 ```
 6) Add stop impersonate item to topbar_left_content.blade.php:
 
-```
+``` html
 @if (backpack_user()->isImpersonating())
     <li><a href="{{ url('admin/stop-impersonating') }}">Stop Impersonating</a></li>
 @endif
@@ -87,7 +87,7 @@ Route::group([
 ```
 
 7) Add to App\Models\User:
-```
+``` php
 use \Backpack\CRUD\app\Models\Traits\CrudTrait;
 use \Spatie\Permission\Traits\HasRoles;
 use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
@@ -102,7 +102,7 @@ php artisan config:clear
 ```
 9) Sibling from storage to public 
 
-```
+``` bash
 php artisan storage:link
 
 ```
