@@ -95,16 +95,16 @@ use \Backpack\CRUD\app\Models\Traits\CrudTrait;
 use \Spatie\Permission\Traits\HasRoles;
 use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
 ```
-8) In Terminal ,Run:(If something went wrong)
-``` bash
-php artisan route:clear
-php artisan config:clear
-
-```
-9) Symlink from storage to public 
+8) Symlink from storage to public 
 
 ``` bash
 php artisan storage:link
+
+```
+9) In Terminal ,Run:(If something went wrong)
+``` bash
+php artisan route:clear
+php artisan config:clear
 
 ```
 
