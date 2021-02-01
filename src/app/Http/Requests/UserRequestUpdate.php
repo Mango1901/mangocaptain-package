@@ -5,7 +5,7 @@ namespace Backpack\NewsCRUD\app\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+class UserRequestUpdate extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,8 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-             'name' => 'required|min:5|max:255',
-             "email" => 'required|min:5|max:80',
-             "password"=>"required|min:8",
-            'password_confirmation' => 'required_with:password|same:password|min:8'
+            'name' => 'required|min:2|max:255',
+            "email" => 'required|min:5|max:80',
         ];
     }
 

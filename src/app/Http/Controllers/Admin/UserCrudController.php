@@ -3,9 +3,10 @@
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\NewsCRUD\app\Http\Requests\UserRequest;
+use Backpack\NewsCRUD\app\Http\Requests\UserRequestCreate;
 use Backpack\NewsCRUD\app\Http\Controllers\Admin\Operations\ImpersonateOperation;
 use Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+use Backpack\NewsCRUD\app\Http\Requests\UserRequestUpdate;
 use Illuminate\Support\Facades\Hash;
 
 class UserCrudController extends CrudController
@@ -44,13 +45,13 @@ class UserCrudController extends CrudController
     public function setupCreateOperation()
     {
         $this->addUserFields();
-        $this->crud->setValidation(UserRequest::class);
+        $this->crud->setValidation(UserRequestCreate::class);
     }
 
     public function setupUpdateOperation()
     {
             $this->addUserFields();
-            $this->crud->setValidation(UserRequest::class);
+            $this->crud->setValidation(UserRequestUpdate::class);
     }
 
     /**
