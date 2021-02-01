@@ -15,8 +15,8 @@
 ```
 1) In your terminal, run:
 ``` bash
-php artisan config:cache
 php artisan config:clear
+
 composer require spatie/laravel-backup
  
 composer require mangopostcmsbackpack/postpackage:dev-master
@@ -35,7 +35,7 @@ php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider
 3) Run the migration to have the database table we need:
 
 ``` bash
-php artisan migrate: (if fails please run php artisan route:clear,php artisan route:cache and then run php artisan migrate:fresh)
+php artisan migrate: (if fails please run php artisan route:clear and then run php artisan migrate:fresh)
 php artisan db:seed --class="packageSeeder"
 ```
 4) Make sure you create a route/backpack/permissionmanager.php,then paste this to this file:
@@ -98,8 +98,6 @@ use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
 8) In Terminal ,Run:(If something went wrong)
 ``` bash
 php artisan route:clear
-php artisan route:cache
-php artisan config:cache
 php artisan config:clear
 
 ```
