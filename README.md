@@ -19,7 +19,7 @@ php artisan config:cache
 php artisan config:clear
 composer require spatie/laravel-backup
  
-composer require mangocaptaincmsbackpack/package:dev-master
+composer require mangopostcmsbackpack/postpackage:dev-master
 
 php artisan backpack:install
 
