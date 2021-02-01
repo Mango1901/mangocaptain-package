@@ -1,11 +1,11 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Http\Controllers\Admin\Charts;
+namespace MangoPostBackPack\PostBackPack\app\Http\Controllers\Admin\Charts;
 
-use Backpack\NewsCRUD\app\Models\User;
+use MangoPostBackPack\PostBackPack\app\Models\User;
 use Backpack\CRUD\app\Http\Controllers\ChartController;
-use Backpack\NewsCRUD\app\Models\Category;
-use Backpack\NewsCRUD\app\Models\Tag;
+use MangoPostBackPack\PostBackPack\app\Models\Category;
+use MangoPostBackPack\PostBackPack\app\Models\Tag;
 use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
 class NewEntriesChartController extends ChartController

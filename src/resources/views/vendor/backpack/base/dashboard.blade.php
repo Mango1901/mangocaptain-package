@@ -33,12 +33,12 @@
     // need them to show information from the DB.
     //
     // But you do whatever you think it's best. Who am I, your mom?
-    $productCount = \Backpack\NewsCRUD\app\Models\Post::count();
-    $userCount = \Backpack\NewsCRUD\app\Models\User::count();
-    $categoryCount = \Backpack\NewsCRUD\app\Models\Category::count();
+    $productCount = config('backpack.mangocaptainconfig.models.post')::count();
+    $userCount = config('backpack.mangocaptainconfig.models.user')::count();
+    $categoryCount = config('backpack.mangocaptainconfig.models.category')::count();
     $lastCategory = NULL;$lastCategoryDaysAgo="0";
-    if((\Backpack\NewsCRUD\app\Models\Category::all()) == NULL){
-         $lastCategory = \Backpack\NewsCRUD\app\Models\Category::orderBy('created_at', 'DESC')->first();
+    if((config('backpack.mangocaptainconfig.models.category')::all()) == NULL){
+         $lastCategory = config('backpack.mangocaptainconfig.models.category')::orderBy('created_at', 'DESC')->first();
         $lastCategoryDaysAgo = \Carbon\Carbon::parse($lastCategory->created_at)->diffInDays(\Carbon\Carbon::today());
     }
      // notice we use Widget::add() to add widgets to a certain group

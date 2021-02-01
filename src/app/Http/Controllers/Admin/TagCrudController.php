@@ -1,11 +1,11 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
+namespace MangoPostBackPack\PostBackPack\app\Http\Controllers\Admin;
 
-use Backpack\NewsCRUD\app\Models\Tag;
+use MangoPostBackPack\PostBackPack\app\Models\Tag;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
-use Backpack\NewsCRUD\app\Http\Requests\TagRequest;
+use MangoPostBackPack\PostBackPack\app\Http\Requests\TagRequest;
 use CRUD;
 
 class TagCrudController extends CrudController

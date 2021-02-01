@@ -37,12 +37,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Backpack\\NewsCRUD\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Backpack\\NewsCRUD\\": "tests"
+            "MangoPostBackPack\\PostBackPack\\": "src"
         }
     },
     "scripts": {
@@ -54,7 +49,7 @@
         },
         "laravel": {
             "providers": [
-                "Backpack\\NewsCRUD\\NewsCRUDServiceProvider"
+                "MangoPostBackPack\\PostBackPack\\NewsCRUDServiceProvider"
             ]
         }
     }

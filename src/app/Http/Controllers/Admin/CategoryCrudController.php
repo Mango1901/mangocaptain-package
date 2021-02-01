@@ -1,11 +1,11 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
+namespace MangoPostBackPack\PostBackPack\app\Http\Controllers\Admin;
 
-use Backpack\NewsCRUD\app\Models\Category;
+use MangoPostBackPack\PostBackPack\app\Models\Category;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest;
+use MangoPostBackPack\PostBackPack\app\Http\Requests\CategoryRequest;
 
 class CategoryCrudController extends CrudController
 {

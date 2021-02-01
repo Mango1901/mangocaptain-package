@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Http\Requests;
+namespace MangoPostBackPack\PostBackPack\app\Http\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;

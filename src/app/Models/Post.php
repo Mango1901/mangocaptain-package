@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Models;
+namespace MangoPostBackPack\PostBackPack\app\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

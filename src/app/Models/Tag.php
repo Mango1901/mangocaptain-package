@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Models;
+namespace MangoPostBackPack\PostBackPack\app\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Cviebrock\EloquentSluggable\Sluggable;

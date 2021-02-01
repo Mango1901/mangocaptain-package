@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\NewsCRUD;
+namespace MangoPostBackPack\PostBackPack;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
@@ -32,11 +32,6 @@ class NewsCRUDServiceProvider extends ServiceProvider
             __DIR__.'/config/backpack/mangocaptainconfig.php',
             'backpack.mangocaptainconfig'
         );
-        $this->mergeConfigFrom(
-            __DIR__.'/config/save_disk.php',
-            'save_disk'
-        );
-
         // publish config file
         $this->publishes([__DIR__.'/config' => config_path()], 'config');
         // publish migrations

@@ -1,12 +1,12 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
+namespace MangoPostBackPack\PostBackPack\app\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\NewsCRUD\app\Http\Requests\UserRequestCreate;
-use Backpack\NewsCRUD\app\Http\Controllers\Admin\Operations\ImpersonateOperation;
+use MangoPostBackPack\PostBackPack\app\Http\Requests\UserRequestCreate;
+use MangoPostBackPack\PostBackPack\app\Http\Controllers\Admin\Operations\ImpersonateOperation;
 use Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
-use Backpack\NewsCRUD\app\Http\Requests\UserRequestUpdate;
+use MangoPostBackPack\PostBackPack\app\Http\Requests\UserRequestUpdate;
 use Illuminate\Support\Facades\Hash;
 
 class UserCrudController extends CrudController

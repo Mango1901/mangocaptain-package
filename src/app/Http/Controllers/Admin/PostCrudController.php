@@ -1,11 +1,11 @@
 <?php
 
-namespace Backpack\NewsCRUD\app\Http\Controllers\Admin;
+namespace MangoPostBackPack\PostBackPack\app\Http\Controllers\Admin;
 
-use Backpack\NewsCRUD\app\Http\Requests\PostRequest;
-use Backpack\NewsCRUD\app\Models\Category;
-use Backpack\NewsCRUD\app\Models\Post;
-use Backpack\NewsCRUD\app\Models\Tag;
+use MangoPostBackPack\PostBackPack\app\Http\Requests\PostRequest;
+use MangoPostBackPack\PostBackPack\app\Models\Category;
+use MangoPostBackPack\PostBackPack\app\Models\Post;
+use MangoPostBackPack\PostBackPack\app\Models\Tag;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
