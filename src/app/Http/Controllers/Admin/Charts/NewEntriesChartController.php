@@ -2,10 +2,10 @@
 
 namespace Backpack\NewsCRUD\app\Http\Controllers\Admin\Charts;
 
-use App\Models\User;
+use Backpack\NewsCRUD\app\Models\User;
 use Backpack\CRUD\app\Http\Controllers\ChartController;
-use App\Models\Category;
-use App\Models\Tag;
+use Backpack\NewsCRUD\app\Models\Category;
+use Backpack\NewsCRUD\app\Models\Tag;
 use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
 class NewEntriesChartController extends ChartController
