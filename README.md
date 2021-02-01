@@ -36,19 +36,6 @@ php artisan vendor:publish --provider="Backpack\NewsCRUD\NewsCRUDServiceProvider
 php artisan migrate: (if fails please run php artisan route:clear and then run php artisan migrate:fresh)
 php artisan db:seed --class="packageSeeder"
 ```
-4) Make sure you create a route/backpack/permissionmanager.php,then paste this to this file:
- ``` php
-<?php
-
-Route::group([
-    'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
-    'prefix'     => config('backpack.base.route_prefix', 'admin'),
-    'middleware' => ['web', backpack_middleware()],
-], function () {
-    //
-});
-
-```
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 ``` html
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
@@ -57,10 +44,6 @@ Route::group([
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-users"></i> Authorizations</a>
     <ul class="nav-dropdown-items">
         <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user') }}"><i class="nav-icon la la-user"></i> <span>Users</span></a></li>
-        @if(backpack_user()->hasRole("Admin"))
-            <li class="nav-item"><a class="nav-link" href="{{ backpack_url('role') }}"><i class="nav-icon la la-id-badge"></i> <span>Roles</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon la la-key"></i> <span>Permissions</span></a></li>
-        @endif
     </ul>
 </li>
 <li class="nav-item nav-dropdown">
@@ -78,20 +61,9 @@ Route::group([
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('backup') }}'><i class='nav-icon la la-hdd-o'></i> Backups</a></li>
 
 ```
-6) Add stop impersonate item to topbar_left_content.blade.php:
-
-``` html
-@if (backpack_user()->isImpersonating())
-    <li><a href="{{ url('admin/stop-impersonating') }}">Stop Impersonating</a></li>
-@endif
-
-```
-
 7) Add to App\Models\User:
 ``` php
 use \Backpack\CRUD\app\Models\Traits\CrudTrait;
-use \Spatie\Permission\Traits\HasRoles;
-use \Backpack\NewsCRUD\app\Http\Models\Traits\CanImpersonateTrait;
 ```
 8) Symlink from storage to public 
 
