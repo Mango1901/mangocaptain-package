@@ -4,7 +4,6 @@
             <small>Use the <span class="label label-default">details_row</span> functionality to show more information about the entry, when that information does not fit inside the table column.</small><br><br>
             <strong>Title:</strong> {{ $entry->title }} <br>
             <strong>Description:</strong> {!! $entry->description !!} <br>
-            <strong>Format:</strong> {{ $entry->format }} <br>
             <strong>created_at:</strong> {{ $entry->created_at }} <br>
             <strong>Excerpt:</strong> {{ $entry->excerpt }} <br>
             <strong>Url:</strong> {{ $entry->url }} <br>
