@@ -52,12 +52,8 @@ class Tag extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function articles()
-    {
-        return $this->belongsToMany('Backpack\NewsCRUD\app\Models\Article', 'article_tag');
-    }
     public function user(){
-        return $this->belongsTo(User::class,"user_id","id");
+        return $this->belongsTo(config('backpack.mangocaptainconfig.models.user'),"user_id","id");
     }
 
     /*

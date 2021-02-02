@@ -54,20 +54,15 @@ class Category extends Model
 
     public function parent()
     {
-        return $this->belongsTo('Backpack\NewsCRUD\app\Models\Category', 'parent_id');
+        return $this->belongsTo(config('backpack.mangocaptainconfig.models.category'), 'parent_id');
     }
 
     public function children()
     {
-        return $this->hasMany('Backpack\NewsCRUD\app\Models\Category', 'parent_id');
-    }
-
-    public function articles()
-    {
-        return $this->hasMany('Backpack\NewsCRUD\app\Models\Category');
+        return $this->hasMany(config('backpack.mangocaptainconfig.models.category'), 'parent_id');
     }
     public function user(){
-        return $this->belongsTo(User::class,"user_id","id");
+        return $this->belongsTo(config('backpack.mangocaptainconfig.models.user'),"user_id","id");
 
     }
 

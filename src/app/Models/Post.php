@@ -23,7 +23,7 @@ class Post extends Model
     public function category()
     {
         return $this->morphToMany(
-            Category::class,
+            config('backpack.mangocaptainconfig.models.category'),
             'cateable',
             "cateable",
             "cateable_id",
@@ -31,12 +31,12 @@ class Post extends Model
         );
     }
     public function user(){
-        return $this->belongsTo(User::class,"user_id","id");
+        return $this->belongsTo(config('backpack.mangocaptainconfig.models.user'),"user_id","id");
     }
     public function tag()
     {
         return $this->morphToMany(
-            Tag::class,
+            config('backpack.mangocaptainconfig.models.tag'),
             'taggable',
             "taggable",
            "taggable_id",
