@@ -56,7 +56,7 @@ class Tag extends Model
     {
         return $this->belongsToMany('Backpack\NewsCRUD\app\Models\Article', 'article_tag');
     }
-    public function User(){
+    public function user(){
         return $this->belongsTo(User::class,"user_id","id");
     }
 

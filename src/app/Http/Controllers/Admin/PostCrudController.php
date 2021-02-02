@@ -261,7 +261,7 @@ class PostCrudController extends CrudController
             "name"=>"user_id",
             'type'=> 'select',
             "label"=>"Author",
-            'entity' => "User",
+            'entity' => "user",
             'attribute' => 'name',
             'wrapper'   => [
                 'href' => function ($crud, $column, $entry, $related_key) {
